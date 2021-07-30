@@ -1,0 +1,3 @@
+import Pps<%= classify(name) %> from './src/Pps<%= classify(name) %>.vue'
+
+export default Pps<%= classify(name) %>

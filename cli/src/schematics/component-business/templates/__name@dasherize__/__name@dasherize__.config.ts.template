@@ -1,0 +1,9 @@
+import { Component } from 'vue'
+import { COMPONENT_METHOD } from '@/core/dtos/factories.dto.ts'
+
+@Component({})
+export function <%= classify(name) %>Config {
+  return {
+    COMPONENT_METHOD
+  }
+}

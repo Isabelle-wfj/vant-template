@@ -1,0 +1,35 @@
+<template>
+  <div class="Pps-<%= dasherize(name) %>">
+    Pps<%= classify(name) %> Working!
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent, PropType, computed } from 'vue'
+import { Pps<%= classify(name) %>Adapter } from './Pps<%= classify(name) %>.adapter'
+import { PPS_<%= underscore(name).toLocaleUpperCase() %>_DEFAULT_CONFIG } from './Pps<%= classify(name) %>.default'
+import CustomizeComponentFactory from '@/core/factory/component-customize.factory'
+export default defineComponent({
+  name: 'Pps<%= classify(name) %>',
+  props: {
+    <%= camelize(name) %>Config: {
+      type: Object as PropType<Pps<%= classify(name) %>Adapter>,
+      required: true
+    }
+  },
+  setup(props) {
+    const Config = computed(
+      (): Pps<%= classify(name) %>Adapter => {
+        return {
+          ...PPS_<%= underscore(name).toLocaleUpperCase() %>_DEFAULT_CONFIG,
+          ...props.<%= camelize(name) %>Config
+        }
+      }
+    )
+    return {
+      Config,
+      ...CustomizeComponentFactory(props, { Config })
+    }
+  }
+})
+</script>

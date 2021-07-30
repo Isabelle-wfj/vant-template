@@ -1,0 +1,17 @@
+<template>
+  <container-template class="<%= dasherize(name) %>" title="" :breadcrumbConfig="breadcrumbConfig">
+    Pps<%= classify(name) %> Working!
+  </container-template>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { Pps<%= classify(name) %>Config } from './<%= classify(name) %>.config'
+export default defineComponent({
+  setup() {
+    return {
+      ...Pps<%= classify(name) %>Config()
+    }
+  }
+})
+</script>

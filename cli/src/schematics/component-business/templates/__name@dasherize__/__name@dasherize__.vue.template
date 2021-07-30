@@ -1,0 +1,14 @@
+<template>
+  <div class="bs-<%= dasherize(name) %>">
+    <%= classify(name) %> Working!
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { <%= classify(name) %>Config } from './<%= classify(name) %>.config'
+export default defineComponent({
+  setup() {
+    <%= classify(name) %>Config()
+  }
+})

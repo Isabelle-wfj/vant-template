@@ -1,0 +1,9 @@
+import { BaseComponentAdapter } from '@/core/dtos/component-base.dto'
+
+export interface <%= classify(name) %>Adapter extends BaseComponentAdapter {
+  on?: {}
+}
+
+export interface <%= classify(name) %>Output {
+  config?: <%= classify(name) %>Adapter
+}

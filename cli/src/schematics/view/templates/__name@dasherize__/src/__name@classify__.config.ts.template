@@ -1,0 +1,20 @@
+import { reactive } from 'vue'
+import { FlBreadcrumbAdapter } from '@/core/components/functional/breadcrumb/src/FlBreadcrumb.adapter'
+
+export function Pps<%= classify(name) %>Config() {
+  const breadcrumbConfig = reactive<FlBreadcrumbAdapter>({
+    styles: ['border-bottom:none'],
+    items: [
+      {
+        label: '认购订单',
+        to: '/fund-trading/subscription-order'
+      },
+      {
+        label: '新增认购订单'
+      }
+    ]
+  })
+  return {
+    breadcrumbConfig
+  }
+}
