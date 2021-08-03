@@ -1,7 +1,7 @@
 <template>
-  <container-template class="<%= dasherize(name) %>" title="" :breadcrumbConfig="breadcrumbConfig">
+  <pps-layout class="<%= dasherize(name) %>">
     Pps<%= classify(name) %> Working!
-  </container-template>
+  </pps-layout>
 </template>
 
 <script lang="ts">

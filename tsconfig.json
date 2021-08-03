@@ -4,6 +4,10 @@
     "jsx": "preserve",
     "target": "ES2019",
     "module": "ESNext",
+    "noImplicitAny": false,
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
+    "plugins": [{ "name": "ts-vue-plugin" }],
     "strict": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -11,7 +15,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "paths": {
-      "@demo/*": ["docs/site/*"]
+      "@/*": ["src/*"]
     }
   },
   "include": ["src/**/*", "docs/**/*", "test/**/*"]

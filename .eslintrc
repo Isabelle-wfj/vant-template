@@ -16,10 +16,19 @@
   "rules": {
     "@typescript-eslint/no-explicit-any": ["off"],
     "@typescript-eslint/no-non-null-assertion": "off",
-    "prettier/prettier": ["error", { "singleQuote": true, "semi": false, "endOfLine": "auto" }],
+    "prettier/prettier": ["error", {
+      "singleQuote": true,
+      "semi": false,
+      "endOfLine": "auto",
+      "arrowParens": "avoid",
+      "useTabs": false,
+      "trailingComma": "none" }],
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/no-this-alias": ["off"],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "quotes": ["error", "single"],
-    "semi": ["error", "never"]
+    "curly": "off",
+    "semi": ["error", "never"],
+    "comma-dangle": ["error", "never"]
   }
 }

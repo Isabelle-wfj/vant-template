@@ -42,7 +42,7 @@ export interface ViewConfigAdapter {
 export const CLI_DEFAULT_CONFIG: CliConfig = {
   exportScssPath: 'src/core/styles/export.scss',
   routerToViewPath: '../views',
-  mainRouterPath: 'src/router-r/router.ts',
+  mainRouterPath: 'src/router/router.ts',
   viewPath: 'src/views',
   baseComponentPath: 'src/core/components/base',
   formComponentPath: 'src/core/components/base/form',
