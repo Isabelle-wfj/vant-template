@@ -1,0 +1,36 @@
+@mixin layout-wrap($wrap: null) {
+  @if $wrap == null { $wrap : 'wrap' }
+  flex-wrap: wrap;
+}
+@mixin layout-align($align: 'start', $justify: 'start') {
+  $isAlignValid: false;
+  $isJustifyValid: false;
+  @each $name in 'start', 'between', 'center', 'around', 'end', 'stretch' {
+    @if $name == $align { $isAlignValid: true }
+    @if $name == $justify { $isJustifyValid: true }
+  }
+  @if $isAlignValid == true and $isJustifyValid == true {
+    @if $align == 'start' { $align: 'flex-start' }
+    @if $justify == 'start' { $justify: 'flex-start' }
+    @if $align == 'end' { $align: 'flex-end' }
+    @if $justify == 'end' { $justify: 'flex-end' }
+    @if $align == 'between' { $align: 'space-between' }
+    @if $justify == 'between' { $justify: 'space-between' }
+    @if $align == 'around' { $align: 'space-around' }
+    @if $justify == 'around' { $justify: 'space-around' }
+    align-items: #{$align};
+    align-content: #{$align};
+    justify-content: #{$justify};
+  }
+}
+@mixin layout($direction: null, $wrap: null, $align: 'start', $justify: 'start') {
+  @if $direction != 'column' { $direction : 'row'; }
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: $direction;
+  @include layout-wrap($wrap);
+  @include layout-align($align, $justify)
+}
+
+
+

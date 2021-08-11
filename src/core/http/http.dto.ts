@@ -38,7 +38,7 @@ export interface ApiSendConfig {
 export interface ApiConfig {
   apiPrefixUrl: string // 经过代理的接口前缀地址
   defaultBodyType: HTTP_BODY_TYPES
-  successCode: number | string
+  successCode: number | string | boolean
   successMessage: string
   errroDefaultMessage: string
   successHandle?(): void | Promise<void>

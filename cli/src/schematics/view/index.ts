@@ -88,10 +88,7 @@ export function setViewRouter(options: CliConfig): Rule {
       // 向ruotes定义的变量里插入路由
       // ts.SyntaxKind.PropertyAssignment 可以处理export default中
       // ts.SyntaxKind.VariableDeclaration 处理的是变量
-      const arrayNodes = findNodes(
-        routerSource,
-        ts.SyntaxKind.VariableDeclaration
-      )
+      const arrayNodes = findNodes(routerSource, ts.SyntaxKind.VariableDeclaration)
         .reverse()
         .filter((node: ts.PropertyAssignment) => {
           return node.getChildren().some(node => node.getText() === 'routes')
@@ -102,13 +99,9 @@ export function setViewRouter(options: CliConfig): Rule {
           .getChildren()
           .find(node => node.kind === ts.SyntaxKind.ArrayLiteralExpression)
         if (routesArrayNode) {
-          const indentation = getTextIndentation(
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            (routesArrayNode as ts.ArrayLiteralExpression).elements
-              .find(
-                node => node.kind === ts.SyntaxKind.ObjectLiteralExpression
-              )!
-              .getFullText()
+          const indentation = getTextIndentation((routesArrayNode as ts.ArrayLiteralExpression).elements
+            .find(node => node.kind === ts.SyntaxKind.ObjectLiteralExpression)!
+            .getFullText()
           )
           const routesChange = new InsertChange(
             routerPath,

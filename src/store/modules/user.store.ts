@@ -1,36 +1,42 @@
 import { Dialog } from 'vant'
 import { ActionContext } from 'vuex'
+import in18 from '@/core/utils/i18n'
+import {
+  getStorageItem,
+  setStorageItem,
+  removeStorageItem
+} from '@/core/utils/tools/storage'
 interface State {
   [key: string]: any
 }
-const localStorageEnable =
-  window.Storage &&
-  window.localStorage &&
-  window.localStorage instanceof Storage
-const localUser = localStorageEnable && localStorage.getItem('user')
-const user = localStorageEnable && localUser ? JSON.parse(localUser) : {}
 const User = {
   state: {
-    user,
+    lang: getStorageItem('lang') || 'zh_CN',
+    color: getStorageItem('color') || 'yellow',
+    user: getStorageItem('user') || {},
     isTokenExpiredHandling: false // 是否正在处理401
   },
   mutations: {
+    setSkin: (state: any, color: any) => {
+      setStorageItem('color', color)
+      state.color = color
+    },
+    setI18n: (state: any, lang: any) => {
+      in18.$setLocale(lang)
+      state.lang = lang
+    },
     setUser: (state: any, user: any) => {
-      localStorageEnable && localStorage.setItem('user', JSON.stringify(user))
+      setStorageItem('user', user)
       state.user = user
     },
     setUserInfo: (state: any, userInfo: any) => {
       const user = Object.assign(state.user, userInfo)
-      localStorageEnable && localStorage.setItem('user', JSON.stringify(user))
+      setStorageItem('user', user)
       state.user = user
     },
     clearUser: (state: any) => {
-      if (localStorageEnable) {
-        localStorage.removeItem('user')
-        localStorage.removeItem('permission')
-      }
+      removeStorageItem('user')
       state.user = {}
-      state.permissions = []
     },
     tokenExpired: (state: any) => {
       if (state.isTokenExpiredHandling) return
@@ -40,11 +46,8 @@ const User = {
         message: '登录已过期，请重新登录。',
         confirmButtonText: '重新登录'
       }).then(() => {
-        if (localStorageEnable) {
-          localStorage.removeItem('user')
-        }
+        removeStorageItem('user')
         state.user = {}
-        state.permissions = []
         state.isTokenExpiredHandling = false
       })
     }

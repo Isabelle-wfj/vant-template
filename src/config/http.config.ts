@@ -1,10 +1,10 @@
 import { store } from '../store'
-import { ApiConfig, HTTP_BODY_TYPES } from '../core/http/http.dto'
+import { ApiConfig, HTTP_BODY_TYPES } from '@/core/http/http.dto'
 
 export const API_CONFIG: ApiConfig = {
   apiPrefixUrl: process.env.NODE_ENV === 'production' ? '' : '',
   defaultBodyType: HTTP_BODY_TYPES.X_WWW_FORM_URLENCODED,
-  successCode: '',
+  successCode: true,
   successMessage: '请求成功',
   errroDefaultMessage: '其他错误',
   errorHandles: [
@@ -35,14 +35,14 @@ export const API_CONFIG: ApiConfig = {
 }
 
 export interface HttpResponeType {
-  code?: number | string
+  success?: number | string
   message?: string
   data?: any
   timestamp?: number
 }
 
 export interface HttpErrorResponeType {
-  code: number | string
+  success: number | string
   message: string
   data: any
   timestamp?: number

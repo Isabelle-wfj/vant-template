@@ -147,19 +147,19 @@ async function SendApi(options: ApiSendConfig) {
       return Promise.resolve(res)
     }
     // 此处处理的是后台 code 不存在则请求成功，返回 code 则业务层面问题
-    if (!res.data.code || res.data.code === API_CONFIG.successCode) {
+    if (res.data.success === API_CONFIG.successCode) {
       API_CONFIG.successHandle && (await API_CONFIG.successHandle())
-      return Promise.resolve(res.data || API_CONFIG.successMessage)
+      return Promise.resolve(res.data.data || API_CONFIG.successMessage)
     } else {
       API_CONFIG.errorHandles &&
         API_CONFIG.errorHandles.forEach(async errorHandle => {
-          await errorHandle(200, res.data)
+          await errorHandle(200, res.data.data)
         })
       !isNoErrorHandle &&
         (!API_CONFIG.hasNoErrorHandle ||
-          !API_CONFIG.hasNoErrorHandle(200, res.data)) &&
+          !API_CONFIG.hasNoErrorHandle(200, res.data.data)) &&
         httpErrorHandle(res.data.message || errorText)
-      return Promise.resolve(res.data)
+      return Promise.resolve(res.data.data)
     }
   } catch (e) {
     if (e.__CANCEL__) {

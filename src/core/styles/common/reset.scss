@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  // min-height: 1200px;
+  background: #fff;
+  -moz-osx-font-smoothing: grayscale; // 抗锯齿
+  -webkit-font-smoothing: antialiased; // 抗锯齿
+  text-rendering: optimizeLegibility; // 文本渲染属性 - 侧重文本的可读性（清晰度）
+  font-family: Avenir, 'PingFang SC', 'PingFang-SC-Medium', Helvetica Neue,
+    Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+}
+
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+em,
+pre,
+figcaption,
+figure,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td,
+canvas img {
+  box-sizing: border-box;
+}
+canvas {
+  border: none;
+  outline: none;
+}
+ul {
+  list-style: none;
+}
+
+li {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+fieldset {
+  border: none;
+}
+
+section {
+  padding: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
