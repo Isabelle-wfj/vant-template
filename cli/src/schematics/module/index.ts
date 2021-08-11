@@ -43,30 +43,28 @@ function setViewRouter(options: CliConfig): Rule {
     )
     const routerRecorder = host.beginUpdate(routerPath)
     if (change instanceof InsertChange) {
-      routerRecorder.insertLeft(change.pos, change.toAdd)
+      routerRecorder.insertLeft(change.pos + 1, change.toAdd)
     }
 
     // 默认最后一个带有routes属性的对象为Router对象
-    const arrayNodes = findNodes(routerSource, ts.SyntaxKind.PropertyAssignment)
+    const arrayNodes = findNodes(routerSource, ts.SyntaxKind.VariableDeclaration)
       .reverse()
-      .filter((node: ts.PropertyAssignment) => {
+      .filter((node: ts.VariableStatement) => {
         return node.getChildren().some(node => node.getText() === 'routes')
       })
     if (arrayNodes && arrayNodes.length) {
       const routerNode = arrayNodes[0]
-      const routesArrayNode = routerNode
-        .getChildren()
-        .find(node => node.kind === ts.SyntaxKind.ArrayLiteralExpression)
+      const routesArrayNode = routerNode.getChildren().find(node => node.kind === ts.SyntaxKind.ArrayLiteralExpression)
       if (routesArrayNode) {
-        const indentation = getTextIndentation(
-          (routesArrayNode as ts.ArrayLiteralExpression).elements
-            .find(node => node.kind === ts.SyntaxKind.ObjectLiteralExpression)!
-            .getFullText()
-        )
+        const ele = (routesArrayNode as ts.ArrayLiteralExpression).elements
+        .find(node =>{
+          return node.kind === ts.SyntaxKind.SpreadElement
+        })
+        const indentation = ele ? getTextIndentation(ele!.getFullText()): ''
         const routesChange = new InsertChange(
           routerPath,
           routesArrayNode.pos + 2,
-          `${indentation}...${viewRouteName},`
+          `...${viewRouteName}${indentation ? ', ' : ''}`
         )
         routerRecorder.insertLeft(routesChange.pos, routesChange.toAdd)
       }
