@@ -11,4 +11,4 @@ class Api {
   }
 }
 
-export const PpsCustomerApi = new Api()
+export const PpsLoginApi = new Api()

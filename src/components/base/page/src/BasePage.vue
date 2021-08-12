@@ -8,7 +8,7 @@ import { defineComponent } from 'vue'
 import { ConfigProvider } from 'vant'
 import { GetSkin } from '../../../../core/styles/skin'
 export default defineComponent({
-  name: 'PpsBasePage',
+  name: 'PpsPage',
   components: {
     [ConfigProvider.name]: ConfigProvider
   },

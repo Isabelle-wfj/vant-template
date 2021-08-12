@@ -1,7 +1,7 @@
 <template>
-  <pps-layout class="<%= dasherize(name) %>">
+  <div class="<%= dasherize(name) %>">
     Pps<%= classify(name) %> Working!
-  </pps-layout>
+  </div>
 </template>
 
 <script lang="ts">

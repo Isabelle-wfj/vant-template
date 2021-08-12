@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import AutorRoutes from '../views/autor/index.route'
-const routes: Array<RouteRecordRaw> = [...AutorRoutes]
+import CertificationRoutes from '../views/certification/index.route'
+const routes: Array<RouteRecordRaw> = [...CertificationRoutes]
 
 export default createRouter({
   history: createWebHistory(process.env.BASE_URL),

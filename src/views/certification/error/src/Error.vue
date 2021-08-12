@@ -1,14 +1,14 @@
 <template>
-  <pps-layout class="customer"> PpsCustomer Working! </pps-layout>
+  <div class="error">PpsError Working!</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { PpsCustomerConfig } from './Customer.config'
+import { PpsErrorConfig } from './Error.config'
 export default defineComponent({
   setup() {
     return {
-      ...PpsCustomerConfig()
+      ...PpsErrorConfig()
     }
   }
 })

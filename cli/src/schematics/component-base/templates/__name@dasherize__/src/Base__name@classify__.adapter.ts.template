@@ -1,9 +1,4 @@
-import { BaseComponentAdapter } from '@/core/dtos/component-base.dto'
-
-export interface <%= classify(name) %>Adapter extends BaseComponentAdapter {
+export interface <%= classify(name) %>Adapter {
+  // eslint-disable-next-line @typescript-eslint/ban-types
   on?: {}
-}
-
-export interface <%= classify(name) %>Output {
-  config?: <%= classify(name) %>Adapter
 }

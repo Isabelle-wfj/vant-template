@@ -44,7 +44,7 @@ export const CLI_DEFAULT_CONFIG: CliConfig = {
   routerToViewPath: '../views',
   mainRouterPath: 'src/router/router.ts',
   viewPath: 'src/views',
-  baseComponentPath: 'src/core/components/base',
+  baseComponentPath: 'src/components/base',
   formComponentPath: 'src/core/components/base/form',
   customizeComponentPath: 'src/core/components/customize',
   functionalComponentPath: 'src/core/components/functional',
