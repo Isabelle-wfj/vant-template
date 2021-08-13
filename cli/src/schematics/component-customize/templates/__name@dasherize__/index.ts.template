@@ -1,3 +1,3 @@
-import Pps<%= classify(name) %> from './src/Pps<%= classify(name) %>.vue'
+import Cus<%= classify(name) %> from './src/Cus<%= classify(name) %>.vue'
 
-export default Pps<%= classify(name) %>
+export default Cus<%= classify(name) %>

@@ -1,0 +1,68 @@
+// 特殊数字字体
+// @font-face {
+//   font-family: 'DinPro';
+//   src: url('../../../assets/font/DINPro.ttf');
+// }
+// font-size line-height font-weight
+.pps-font-sm {
+  font-size: var(--van-font-size-sm);
+  line-height: var(--van-line-height-sm);
+}
+.pps-font-md {
+  font-size: var(--van-font-size-md);
+  line-height: var(--van-line-height-md);
+}
+.pps-font-lg {
+  font-size: var(--van-font-size-lg);
+  line-height: var(--van-line-height-lg);
+}
+.pps-font-xl {
+  font-size: var(--van-font-size-xl);
+  line-height: var(--van-line-height-xl);
+}
+.pps-font-xxl {
+  font-size: var(--van-font-size-xxl);
+  line-height: var(--van-line-height-xxl);
+}
+.pps-weight-light {
+  font-weight: var(--van-font-weight-light)
+}
+.pps-weight-normal {
+  font-weight: var(--van-font-weight-normal)
+}
+.pps-weight-bold {
+  font-weight: var(--van-font-weight-bold)
+}
+.pps-align-left {
+  text-align: left
+}
+.pps-align-center {
+  text-align: center
+}
+.pps-align-right {
+  text-align: right
+}
+
+// 主题字体
+.pps-main-font {
+  @extend .pps-font-lg;
+}
+// 副标题字体
+.pps-sub-font {
+  @extend .pps-font-sm;
+  @extend .pps-weight-light;
+  color: var(--van-gray-7);
+}
+// 特殊数字字体
+.pps-number-font {
+  @extend .pps-font-xxl;
+  @extend .pps-weight-bold;
+  font-family: 'DinPro';
+}
+
+
+// example
+.view-base {
+  padding: 20px;
+  border-bottom: 1px solid var(--van-gray-3);
+}

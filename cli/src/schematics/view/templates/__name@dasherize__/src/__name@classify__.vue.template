@@ -8,10 +8,19 @@
 import { defineComponent } from 'vue'
 import { Pps<%= classify(name) %>Config } from './<%= classify(name) %>.config'
 export default defineComponent({
+  components: {},
+  emits: [],
   setup() {
     return {
       ...Pps<%= classify(name) %>Config()
     }
-  }
+  },
+  data() {},
+  computed: {},
+  watch: {},
+  created() {},
+  mounted() {},
+  unmounted() {},
+  methods: {}
 })
 </script>

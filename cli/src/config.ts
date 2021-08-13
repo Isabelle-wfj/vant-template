@@ -45,9 +45,9 @@ export const CLI_DEFAULT_CONFIG: CliConfig = {
   mainRouterPath: 'src/router/router.ts',
   viewPath: 'src/views',
   baseComponentPath: 'src/components/base',
-  formComponentPath: 'src/core/components/base/form',
-  customizeComponentPath: 'src/core/components/customize',
-  functionalComponentPath: 'src/core/components/functional',
-  businessComponentPath: 'src/core/components/business',
+  formComponentPath: 'src/components/base/form',
+  customizeComponentPath: 'src/components/customize',
+  functionalComponentPath: 'src/components/functional',
+  businessComponentPath: 'src/components/business',
   businessComponentPrefix: 'Pps' // 潘帕斯
 }

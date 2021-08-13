@@ -1,6 +1,8 @@
-import { Dialog, Button } from 'vant'
+import { Dialog, Button, Lazyload } from 'vant'
 export default {
   install: app => {
-    app.use(Dialog).use(Button)
+    app.use(Dialog)
+    app.use(Button)
+    app.use(Lazyload, { lazyComponent: true })
   }
 }

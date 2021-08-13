@@ -23,13 +23,12 @@
     justify-content: #{$justify};
   }
 }
-@mixin layout($direction: null, $wrap: null, $align: 'start', $justify: 'start') {
-  @if $direction != 'column' { $direction : 'row'; }
+@mixin layout($direction: 'row', $wrap: null, $align: 'start', $justify: 'start') {
   box-sizing: border-box;
   display: flex;
   flex-direction: $direction;
   @include layout-wrap($wrap);
-  @include layout-align($align, $justify)
+  @include layout-align($align, $justify);
 }
 
 

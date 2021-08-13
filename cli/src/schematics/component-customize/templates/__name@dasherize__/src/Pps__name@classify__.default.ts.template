@@ -1,3 +1,0 @@
-import { Pps<%= classify(name) %>Adapter } from './Pps<%= classify(name) %>.adapter'
-
-export const PPS_<%= underscore(name).toLocaleUpperCase() %>_DEFAULT_CONFIG: Pps<%= classify(name) %>Adapter = {}

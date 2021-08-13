@@ -1,13 +1,13 @@
 <template>
-  <pps-page>
+  <base-page>
     <router-view />
-  </pps-page>
+  </base-page>
 </template>
 <script lang="ts">
-import PpsPage from '@/components/base/page'
+import BasePage from '@/components/base/page'
 export default {
   components: {
-    PpsPage
+    BasePage
   }
 }
 </script>
@@ -18,8 +18,8 @@ export default {
     'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #141414;
-  font-size: 14px;
+  color: var(--van-gray-8);
+  font-size: var(--van-font-size-md);
+  font-weight: var(--van-font-weight-normal);
 }
 </style>
