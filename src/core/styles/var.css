@@ -1,6 +1,5 @@
-@import './variables.scss';
 :root {
-  // Color Palette
+  /* // Color Palette */
   --van-black: #000;
   --van-white: #fff;
   --van-gray-1: #f7f8fa;
@@ -9,8 +8,8 @@
   --van-gray-4: #dcdee0;
   --van-gray-5: #c8c9cc;
   --van-gray-6: #969799;
-  --van-gray-7: $text-sub-color;
-  --van-gray-8: $text-default-color;
+  --van-gray-7: #666;
+  --van-gray-8: #141414;
   --van-red: #ee0a24;
   --van-blue: #1989fa;
   --van-orange: #ff976a;
@@ -18,11 +17,11 @@
   --van-orange-light: #fffbe8;
   --van-green: #07c160;
 
-  // Gradient Colors
+  /* // Gradient Colors */
   --van-gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
   --van-gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
 
-  // Component Colors
+  /* // Component Colors */
   --van-primary-color: var(--van-blue);
   --van-success-color: var(--van-green);
   --van-danger-color: var(--van-red);
@@ -33,9 +32,9 @@
   --van-disabled-opacity: 0.5;
   --van-background-color: var(--van-gray-1);
   --van-background-color-light: #fafafa;
-  --van-text-link-color: $text-link-color;
+  --van-text-link-color: #586A95;
 
-  // Padding
+  /* // Padding */
   --van-padding-base: 4px;
   --van-padding-xs: 8px;
   --van-padding-sm: 12px;
@@ -43,7 +42,7 @@
   --van-padding-lg: 24px;
   --van-padding-xl: 32px;
 
-  // Font
+  /* // Font */
   --van-font-size-xs: 10px;
   --van-font-size-sm: 12px;
   --van-font-size-md: 14px;
@@ -65,13 +64,13 @@
   --van-price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue,
     Arial, sans-serif;
 
-  // Animation
+  /* // Animation */
   --van-animation-duration-base: 0.3s;
   --van-animation-duration-fast: 0.2s;
   --van-animation-timing-function-enter: ease-out;
   --van-animation-timing-function-leave: ease-in;
 
-  // Border
+  /* // Border */
   --van-border-color: var(--van-gray-3);
   --van-border-width-base: 1px;
   --van-border-radius-sm: 2px;

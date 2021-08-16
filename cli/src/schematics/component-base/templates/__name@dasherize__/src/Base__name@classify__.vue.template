@@ -1,22 +1,35 @@
 <template>
   <div class="base-<%= dasherize(name) %>">
-    base component
+    Base<%= classify(name) %> Working!
   </div>
 </template>
+
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType, computed, ref } from 'vue'
+import { Base<%= classify(name) %>Adapter, Base<%= classify(name) %>Output } from './Base<%= classify(name) %>.adapter'
+import { <%= underscore(name).toLocaleUpperCase() %>_DEFAULT } from './Base<%= classify(name) %>.default'
+import { mergeEventsAndDasherizeKeys } from '@/core/utils/factory/view.factory'
 export default defineComponent({
-  name: 'Pps<%= classify(name) %>'
-  props: {},
-  emits: [],
-  setup() {},
-  data() {},
-  computed: {},
-  watch: {},
-  created() {},
-  mounted() {},
-  unmounted() {},
-  methods: {}
+  props: {
+    config: {
+      type: Object as PropType<<%= classify(name) %>Adapter>,
+    }
+  },
+  setup(props, ctx) {
+    const Config = computed(() => {
+      return { ...<%= underscore(name).toLocaleUpperCase() %>_DEFAULT, ...props.config }
+    })
+    return {
+      Config,
+      mergeEventsAndDasherizeKeys
+    }
+  }
 })
 </script>
 
+
+<style lang="scss">
+@import "<%= exportScssPath %>";
+
+@include b(base-<%= dasherize(name) %>) {}
+</style>

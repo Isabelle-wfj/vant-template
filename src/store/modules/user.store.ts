@@ -12,7 +12,7 @@ interface State {
 const User = {
   state: {
     lang: getStorageItem('lang') || 'zh_CN',
-    color: getStorageItem('color') || 'yellow',
+    color: getStorageItem('color') || '#141414',
     user: getStorageItem('user') || {},
     isTokenExpiredHandling: false // 是否正在处理401
   },

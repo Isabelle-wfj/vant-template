@@ -6,8 +6,8 @@
     "cli"
   ],
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "cross-env PPS_CDN_SRC=//cdn.ipampas.com/ vue-cli-service serve",
+    "build": "cross-env PPS_CDN_SRC=//cdn.ipampas.com/ vue-cli-service build",
     "lint": "vue-cli-service lint",
     "docs": "docsify serve docs",
     "format": "prettier --write \"src/**/*.{ts,vue}\"",
@@ -40,6 +40,7 @@
     "@vue/eslint-config-typescript": "^7.0.0",
     "babel-eslint": "^10.1.0",
     "compression-webpack-plugin": "^8.0.1",
+    "cross-env": "^7.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",

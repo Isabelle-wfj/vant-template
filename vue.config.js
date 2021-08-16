@@ -13,9 +13,8 @@ module.exports = {
       sass: {
         // 向全局sass样式传入共享的全局变量, $src可以配置图片cdn前缀
         additionalData: `
-        @import "@/core/styles/variables.scss";
         @import "@/core/styles/mixins/layout.scss";
-        $src: "${process.env.VUE_APP_OSS_SRC}";
+        $src: "${process.env.PPS_CDN_SRC}";
         `
       }
     }

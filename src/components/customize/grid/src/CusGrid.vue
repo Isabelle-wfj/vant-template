@@ -1,7 +1,5 @@
 <template>
-  <div class="base-grid">
-    base component
-  </div>
+  <div class="base-grid">base component</div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -19,4 +17,3 @@ export default defineComponent({
   methods: {}
 })
 </script>
-

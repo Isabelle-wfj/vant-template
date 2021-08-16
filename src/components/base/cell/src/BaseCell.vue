@@ -149,8 +149,8 @@ export default defineComponent({
       margin-right: 12px;
       border: 1px solid var(--van-border-color);
       background: var(--van-background-color-light);
-      ::v-deep .van-image__error,
-      ::v-deep .van-image__loading {
+      ::deep .van-image__error,
+      ::deep .van-image__loading {
         color: var(--van-text-color);
         font-size: var(--van-line-height-lg);
         font-weight: var(--van-font-weight-bold);

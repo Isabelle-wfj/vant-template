@@ -42,6 +42,24 @@
 .pps-align-right {
   text-align: right
 }
+/*
+* 统一大标题副标题，小标题，
+*/
+// 大标题副标题栏
+.pps-h2-title {
+  @extend .pps-font-xl;
+  padding: 19px 32px;
+  .small {
+    @extend .pps-font-md;
+    margin-top:4px;
+    color: #999
+  }
+}
+// 小标题
+.pps-small-title{
+  @extend .pps-font-md;
+  padding: 19px 32px;
+}
 
 // 主题字体
 .pps-main-font {
@@ -58,9 +76,31 @@
   @extend .pps-font-xxl;
   @extend .pps-weight-bold;
   font-family: 'DinPro';
+  color: var(--van-gray-8)
 }
 
-
+.pps-width {
+  width: 100%
+}
+.pps-width-2 {
+  width: 50%
+}
+.pps-width-3 {
+  width: 33.33%
+}
+.pps-width-4 {
+  width: 25%
+}
+// color
+.pps-warning {
+  color: #FFAB00
+}
+.pps-danger {
+  color: #BF2600
+}
+.pps-success {
+  color: #34A876
+}
 // example
 .view-base {
   padding: 20px;
