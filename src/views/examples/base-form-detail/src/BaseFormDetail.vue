@@ -1,6 +1,8 @@
 <template>
   <div class="view-base">
-    <base-form-detail :config="formConfig"></base-form-detail>
+    <base-form-detail :config="formConfig">
+      <template #label></template>
+    </base-form-detail>
   </div>
 </template>
 

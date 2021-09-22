@@ -14,7 +14,10 @@ export function PpsBaseFormDetailConfig() {
         fieldConfig: [
           {
             label: '长长久久的长标题',
-            name: 'label1'
+            name: 'label1',
+            slots: {
+              label: 'label'
+            }
           },
           {
             label: '短标题',
